@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="./plugins/layui/css/layui.css">
+  <link rel="stylesheet" href="./css/vue-github.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+  <title>vue-github</title>
+</head>
+<body>
+   <header id="search">
+  <div class="logo"><img src="./images/github.jpg" alt="" width="34px" height="34px" ></div>
+  <nav>
+   <div class="search_box">
+     <span class="search_icon" ></span>
+     <input type="search" class="search_input" id="searchInput" placeholder="Search or jump to..."
+     v-model="search_word"
+     @keyup.enter="searchMethod"
+     >
+    </div>
+   <ul class="search_options">
+            <li><a href="#" >Pull requests</a></li>
+            <li><a href="#">Issues</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="#">Explore</a></li>
+   </ul>
+  </nav>
+  <div class="details"></div>
+  <div class="avatar"></div>
+  </header>
+  <main class="main">
+    <div class="menu">
+        <div  class="menu_options">
+         <ul>
+            <li  class="selected"><a href="#" >Repositories</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">Commits</a></li>
+            <li><a href="#">Issues</a></li>
+            <li><a href="#">Marketplace</a></li>
+            <li><a href="#">Topics</a></li>
+            <li><a href="#">Wikis</a></li>
+            <li><a href="#">Users</a></li>
+        </ul>
+        </div>
+        <div class="menu_language">
+            <span class="title">Languages</span>
+            <ul>
+                <li><a href="#" >HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Ruby</a></li>
+                <li><a href="#">Shell</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">C</a></li>
+                <li><a href="#">C#</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="result"  id="result">
+     <div class="special">
+         <div class="special_img_wrap">
+         <img src="./images/git.jpg" alt="" width="80px" height="32px">
+        </div>
+        <div class="special_word">
+              <h3 class="special_title" style="font-size: 20px;"> Git</h3> 
+              <p>Git is the most widely used version control system</p>
+        </div>
+     </div>
+     <div class="result_number" v-if="total" >Showing {{total_format}} available repository results</div>
+     <div
+     v-for="(item,index) in allData"
+     :key=index 
+     >
+     <result-list
+     :message="item"
+     ></result-list> 
+    
+     </div>
+    
+     <div id="pagination" ></div>
+
+    </div>
+    
+  </main>
+
+     
+  <footer></footer>
+
+  <script src="./plugins/layui/layui.js"></script>
+<script src="./plugins/layui/layui.all.js"></script>
+<script src="./js/vue-github.js"></script>
+</body>
+</html>
+
+<script>
+
+
+
+  
+</script>
